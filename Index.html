@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="product-container">
+        <h2 id="product-name">Cool T-Shirt</h2>
+        <p id="product-price">$20.00</p>
+        <label for="size-select">Select Size:</label>
+        <select id="size-select">
+            <option value="small">Small: In Stock</option>
+            <option value="medium">Medium: In Stock</option>
+            <option value="large" data-stock="false">Large: Out of Stock</option>
+        </select>
+        <button id="purchase-button">Purchase</button>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
