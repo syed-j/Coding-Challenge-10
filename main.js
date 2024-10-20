@@ -29,3 +29,19 @@ sizeSelect.addEventListener('change', () => {     // Adds an event listener to '
     purchaseButton.disabled = stock === 0;
 });
 
+// Handle purchase button click
+// Adds an event listener to 'purchaseButton' that triggers on a click event.
+purchaseButton.addEventListener('click', () => {
+    const selectedSize = sizeSelect.value;
+    const stock = productData.stock[selectedSize];
+
+    if (stock > 0) {
+        alert('Product purchased successfully!');
+        productData.stock[selectedSize]--;
+    } else {
+        alert('Product is out of stock.');
+    }
+});
+// If the stock is greater than 0, it displays a success message and decreases the stock count by 1.
+// If the stock is 0, it displays an out-of-stock message.
+
