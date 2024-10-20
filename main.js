@@ -45,3 +45,23 @@ purchaseButton.addEventListener('click', () => {
 // If the stock is greater than 0, it displays a success message and decreases the stock count by 1.
 // If the stock is 0, it displays an out-of-stock message.
 
+function addNewProduct(productName, prices, stock) {
+    const newProductContainer = document.createElement('div');
+    newProductContainer.innerHTML = `
+        <h2>${productName}</h2>
+        <p id="product-price-${productName}">$${prices.small.toFixed(2)}</p>
+        <select id="size-select-${productName}">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+        <button id="purchase-button-${productName}" disabled>Purchase</button>
+    `;
+    productContainer.appendChild(newProductContainer);
+}
+// It accepts three parameters: 'productName', 'prices', and 'stock' for the new product.
+// Creates a new 'div' element to hold the new product details and uses template literals to populate it with the product name, initial price (for 'small' size), size selection dropdown, and a disabled purchase button.
+// The generated HTML is appended to 'productContainer'.
+
+// Example: Add a new product
+addNewProduct('New Product', { small: 15.99, medium: 17.99, large: 19.99 }, { small: 2, medium: 1, large: 0 });
