@@ -16,3 +16,16 @@ const productData = {
         large: 0
     }
 };
+
+// Update price and button state based on selected size
+sizeSelect.addEventListener('change', () => {     // Adds an event listener to 'sizeSelect' that triggers whenever the selected value changes.
+    const selectedSize = sizeSelect.value;
+    const price = productData.prices[selectedSize];
+    const stock = productData.stock[selectedSize];
+
+    // The 'priceElement' text content is updated to show the formatted price using template literals and 'toFixed(2)' to ensure two decimal places.
+    priceElement.textContent = `$${price.toFixed(2)}`;
+    // The 'purchaseButton' is enabled or disabled based on whether the selected size is in stock (stock > 0 enables the button, otherwise disables it).
+    purchaseButton.disabled = stock === 0;
+});
+
